@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  spring:
+    thymeleaf:
+      prefix: classpath:/templates/
+      suffix: .html
+  application:
+    name: qna-board
+  datasource:
+    driver-class-name : com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/qnaboard?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: 3642123@
+
+  # ??? SQL ?? ??
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    # hibernate ??
+    database : mysql
+    hibernate.ddl-auto : none
+    hibernate.naming.strategy : org.hibernate.cfg.ImprovedNamingStrategy
+    hibernate.naming.physical-strategy : org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    generate-ddl : false
+    properties.hibernate.format_sql : true
+    properties.hibernate.enable_lazy_load_no_trans : true
+
