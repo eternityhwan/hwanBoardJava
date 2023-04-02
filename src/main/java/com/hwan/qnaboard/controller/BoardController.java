@@ -1,8 +1,8 @@
 package com.hwan.qnaboard.controller;
 
-import com.hwan.qnaboard.domain.Board;
-import com.hwan.qnaboard.repository.BoardRepository;
+import com.hwan.qnaboard.model.Board;
 import com.hwan.qnaboard.service.BoardService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,32 +11,30 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("value = /qnaboards")
+@RequestMapping("/boards")
 public class BoardController {
 
     @Autowired
     private BoardService boardService;
 
-    // 컨트롤러에서 Thymeleaf 템플릿 파일의 이름과 변수 값을 설정하여 뷰를 반환해야 합니다
-
     // Create function
-    @GetMapping ("/create")
+    @GetMapping("/create")
     public String moveCreateForm() {
-        return "articles/create;";
+        return "articles/create";
     }
 
     @PostMapping("/create")
     public String create(Board board) {
         boardService.create(board);
-        return "redirect:articles/board/";
+        return "redirect:/boards/readall";
     }
 
     // Read function
     // 1. Read ALL
-    @GetMapping("/")
+    @GetMapping("/readall")
     public String getAllArticles(Model model) {
         List<Board> boardList = boardService.findAll();
-        model.addAttribute("board", boardList);
+        model.addAttribute("boardList", boardList);
         return "articles/board";
     }
 
@@ -52,14 +50,14 @@ public class BoardController {
     @PostMapping("/update")
     public String update(Board board) {
         boardService.update(board);
-        return "redirect:articles/board/";
+        return "redirect:/boards/readall";
     }
 
     // Delete function
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable("id") Long id) {
         boardService.delete(id);
-        return "redirect:articles/board/";
+        return "redirect:/boards/readall";
     }
 
 }

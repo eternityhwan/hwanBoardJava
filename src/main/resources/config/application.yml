@@ -20,10 +20,16 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     # hibernate ??
     database : mysql
-    hibernate.ddl-auto : none
+    hibernate.ddl-auto : update
     hibernate.naming.strategy : org.hibernate.cfg.ImprovedNamingStrategy
     hibernate.naming.physical-strategy : org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     generate-ddl : false
     properties.hibernate.format_sql : true
     properties.hibernate.enable_lazy_load_no_trans : true
+
+  logging:
+    level:
+      org.springframework.web.servlet: DEBUG
+    pateern:
+      console: "[%d{HH:mm:ss.SSS}] [%-5level] [%logger{0}] - %msg%n"
 
