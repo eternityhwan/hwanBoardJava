@@ -1,7 +1,16 @@
 server:
   port: 8080
 
+
+jwt:
+  secret: VlwEyVBsYt9V7zq57TejMnVUyzblYcfPQye08f7MGVA9XkHa
+
 spring:
+  security:
+    user:
+      name: admin
+      password: 1234
+
   spring:
     thymeleaf:
       prefix: classpath:/templates/
@@ -29,7 +38,10 @@ spring:
 
   logging:
     level:
-      org.springframework.web.servlet: DEBUG
-    pateern:
-      console: "[%d{HH:mm:ss.SSS}] [%-5level] [%logger{0}] - %msg%n"
+#      org.springframework.web.servlet: DEBUG
+      org.springframework.security: debug
+      root: info
+      org.springframework.web: debug
+#    pateern:
+#      console: "[%d{HH:mm:ss.SSS}] [%-5level] [%logger{0}] - %msg%n"
 

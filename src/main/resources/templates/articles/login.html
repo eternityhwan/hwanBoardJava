@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>로그인폼</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        body {
+            /*background-color: #b2d8d8;*/
+        }
+
+        .container {
+            background-color: #ecf0f1;
+            margin-top: 50px;
+            padding: 50px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<!--- header Area ---->
+<th:block th:replace="~{layout/header :: navBar}"></th:block>
+
+<body>
+
+<div class="container">
+    <h1>Login</h1>
+    <form action="/auth/login" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+    <!-- 성공 메시지 출력 -->
+<!--    <div class="alert alert-success" th:if="${successMessage}">-->
+<!--        <strong>Success!</strong> <span th:text="${successMessage}"></span>-->
+<!--    </div>-->
+
+<!--    <div th:if="${successMessage}" class="alert alert-success">-->
+<!--        <p th:text="${successMessage}"></p>-->
+<!--    </div>-->
+    <!-- 실패 메시지 출력 -->
+    <div th:if="${errorMessage}" class="alert alert-danger">
+        <p th:text="${errorMessage}"></p>
+    </div>
+</div>
+
+</body>
+<!--- footer Area ---->
+<th:block th:replace="~{layout/footer :: footer}"></th:block>
+
+</html>

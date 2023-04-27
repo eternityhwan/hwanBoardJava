@@ -45,6 +45,11 @@
   <div th:insert="~{layout/header :: navBar}"></div>
 </head>
 <body>
+
+<div th:if="${successMessage != null}" class="alert alert-success">
+  <p th:text="${successMessage}"></p>
+</div>
+
 <h1>Board List</h1>
 <table>
   <thead>
@@ -67,8 +72,8 @@
     <td th:text="${board.createdDate}"></td>
     <td th:text="${board.modifiedDate}"></td>
     <td>
-      <a th:href="@{/boards/update/{id}(id=${board.id})}">Edit</a>
-      <a th:href="@{/boards/delete/{id}(id=${board.id})}">Delete</a>
+      <a th:href="@{/boards/update/{id}(id=${board.id})}">수정</a>
+      <a th:href="@{/boards/delete/{id}(id=${board.id})}">삭제</a>
     </td>
   </tr>
   </tbody>
@@ -97,7 +102,10 @@
   </li>
 </ul>
 
-<a href="/boards/create" class="add-button">Add</a>
+<a href="/boards/create" class="add-button">글쓰기</a>
+<a href="/auth/join" class="add-button">회원가입</a>
+<a href="/auth/login" class="add-button">로그인</a>
+<a href="/logout" class="add-button">로그아웃</a>
 </body>
 
 <!----------- footer Area -------------->
@@ -105,5 +113,5 @@
       th:replace "layout/footer.html 파일에서 th:fragment로 지정한 부분을 삽입한다는 코드
        코드를 있는 그대로 가져다 쓰면 길어져서 보기 좋지 않기 때문에 간결하게 갈음하는 행위.
        insert를 써줘도 된다.--->
-<th:block th:replace="layout/footer :: footer"></th:block>
+<th:block th:replace="~{layout/footer :: footer}"></th:block>
 </html>

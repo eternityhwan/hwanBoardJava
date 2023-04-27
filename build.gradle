@@ -19,6 +19,13 @@ repositories {
 }
 
 dependencies {
+    // Spring security 의존성 추가
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    // JWT(Json web token) 의존성 추가
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+    // spring Data Jpa 의존성 추가
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
