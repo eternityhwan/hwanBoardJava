@@ -38,15 +38,6 @@
         </div>
         <button type="submit">Login</button>
     </form>
-    <!-- 성공 메시지 출력 -->
-<!--    <div class="alert alert-success" th:if="${successMessage}">-->
-<!--        <strong>Success!</strong> <span th:text="${successMessage}"></span>-->
-<!--    </div>-->
-
-<!--    <div th:if="${successMessage}" class="alert alert-success">-->
-<!--        <p th:text="${successMessage}"></p>-->
-<!--    </div>-->
-    <!-- 실패 메시지 출력 -->
     <div th:if="${errorMessage}" class="alert alert-danger">
         <p th:text="${errorMessage}"></p>
     </div>

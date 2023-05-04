@@ -1,8 +1,8 @@
 package com.hwan.qnaboard.controller;
 
-import com.hwan.qnaboard.model.Board;
+import com.hwan.qnaboard.entity.Board;
 import com.hwan.qnaboard.service.BoardService;
-import lombok.extern.slf4j.Slf4j;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -11,8 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
+@Tag(name = "게시판 Api", description = "게시판의 CRUD 소개")
 @Controller
 @RequestMapping("/boards") /** 해당 클래스의 요청을 매핑을 정하는 어노테이션 localhost/boards 로 접근해야 이 클래스에 접근한다. */
 public class BoardController {

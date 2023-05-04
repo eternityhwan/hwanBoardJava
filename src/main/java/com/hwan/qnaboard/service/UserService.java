@@ -1,6 +1,6 @@
 package com.hwan.qnaboard.service;
 
-import com.hwan.qnaboard.model.User;
+import com.hwan.qnaboard.entity.User;
 import com.hwan.qnaboard.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

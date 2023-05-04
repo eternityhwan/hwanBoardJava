@@ -50,6 +50,10 @@
   <p th:text="${successMessage}"></p>
 </div>
 
+<div th:if="${successMessage2 != null}" class="alert alert-success">
+  <p th:text="${successMessage2}"></p>
+</div>
+
 <h1>Board List</h1>
 <table>
   <thead>

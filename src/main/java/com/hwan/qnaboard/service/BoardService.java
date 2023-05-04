@@ -1,7 +1,7 @@
 package com.hwan.qnaboard.service;
 
 
-import com.hwan.qnaboard.model.Board;
+import com.hwan.qnaboard.entity.Board;
 import com.hwan.qnaboard.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

@@ -19,12 +19,19 @@ repositories {
 }
 
 dependencies {
-    // Spring security 의존성 추가
+    // API 문서화 의존성
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
+//    implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.6.
+
+     // Spring security 의존성 추가
     implementation 'org.springframework.boot:spring-boot-starter-security'
     // JWT(Json web token) 의존성 추가
-    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
-    implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
-    implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+
+    // Swagger 의존성 추가 -- 스프링 3.0에는 호완이 안돼.
+//    implementation 'io.springfox:springfox-swagger2:3.0.0'
+//    implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+
     // spring Data Jpa 의존성 추가
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
@@ -33,6 +40,8 @@ dependencies {
     runtimeOnly 'com.mysql:mysql-connector-j'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // 서블릿 API 의존성 추가
+    testCompileOnly 'javax.servlet:javax.servlet-api:4.0.1'
 }
 
 tasks.named('test') {
